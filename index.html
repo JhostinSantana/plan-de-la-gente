@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan de la Gente 3.0 · Chone, a otro nivel</title>
+  <meta name="description" content="Plan de la Gente 3.0 para Chone: calles, puentes, río, La Segua, acuario, bienestar, agua, vías rurales y el equipo. Página informativa.">
+  <meta name="theme-color" content="#140c28">
+  <link rel="canonical" href="https://jhostinsantana.github.io/plan-de-la-gente/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_EC">
+  <meta property="og:title" content="Plan de la Gente 3.0 · Chone, a otro nivel">
+  <meta property="og:description" content="El plan para Chone: conectividad, turismo, bienestar y desarrollo rural. Léelo en el celular, sin esperas.">
+  <meta property="og:url" content="https://jhostinsantana.github.io/plan-de-la-gente/">
+  <meta property="og:image" content="https://jhostinsantana.github.io/plan-de-la-gente/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-family: Outfit;
+      font-style: normal;
+      font-weight: 420 720;
+      font-display: swap;
+      src: url("fonts/outfit.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: Fraunces;
+      font-style: normal;
+      font-weight: 560 700;
+      font-display: swap;
+      src: url("fonts/fraunces.woff2") format("woff2");
+    }
+    :root {
+      --ink: #17211c;
+      --muted: #4c5b53;
+      --paper: #f4efe4;
+      --card: #fffdf8;
+      --line: #e3d9c6;
+      --night: #140c28;
+      --sun: #f2c014;
+      --sun-soft: #ffe7a3;
+      --blue: #1554c8;
+      --green: #146b38;
+      --pink: #b01458;
+      --red: #c41932;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Outfit, "Segoe UI", sans-serif;
+      font-weight: 460;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+    img { max-width: 100%; height: auto; display: block; background: #efe6d4; }
+    a { color: var(--blue); }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 640; letter-spacing: -.03em; line-height: .96; text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .saltar {
+      position: absolute; left: 12px; top: -48px;
+      background: #fff; color: var(--ink); padding: 8px 12px; z-index: 40;
+    }
+    .saltar:focus { top: 12px; }
+    .barra { position: sticky; top: 0; z-index: 30; background: var(--night); }
+    .fila {
+      display: flex; align-items: center; gap: 14px;
+      width: min(1080px, calc(100% - 8px));
+      margin: 0 auto; padding: 8px 8px 8px 12px;
+    }
+    .fila nav { min-width: 0; flex: 1; }
+    .marca {
+      color: #fff; text-decoration: none; font-family: Fraunces, Georgia, serif;
+      font-style: italic; font-size: 1.25rem; white-space: nowrap;
+    }
+    .marca span { color: var(--sun); font-style: normal; }
+    .menu {
+      display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none;
+      margin: 0; padding: 0; list-style: none;
+    }
+    .menu::-webkit-scrollbar { display: none; }
+    .menu a {
+      color: #f4ecdc; text-decoration: none; white-space: nowrap;
+      padding: 10px 12px; border-radius: 999px; font-size: .92rem;
+    }
+    .menu a:hover { background: rgba(255,255,255,.08); color: var(--sun-soft); }
+    .bandera { height: 4px; background: linear-gradient(90deg, var(--sun) 0 33.3%, var(--blue) 0 66.6%, var(--red) 0 100%); }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin-inline: auto; }
+    .hero {
+      background:
+        radial-gradient(900px 420px at 100% -10%, rgba(176, 40, 130, .55), transparent 60%),
+        radial-gradient(700px 480px at -10% 110%, rgba(21, 84, 200, .7), transparent 55%),
+        var(--night);
+      color: #fffaf3;
+      padding: 42px 0 56px;
+    }
+    .ojo {
+      margin: 0 0 12px; color: var(--sun-soft);
+      font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 640;
+    }
+    .hero h1 { margin: 0; font-size: clamp(3.3rem, 9vw, 6.6rem); max-width: 11ch; }
+    .hero h1 em { font-style: italic; color: var(--sun); }
+    .baja { max-width: 38rem; font-size: 1.18rem; color: #f3ead8; margin: 18px 0 0; }
+    .sello {
+      display: inline-block; margin-top: 22px;
+      background: #fff; color: var(--night);
+      font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 1.35rem;
+      padding: 8px 18px; border-radius: 999px 999px 999px 8px;
+    }
+    .franja {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--line); border: 1px solid var(--line);
+      border-radius: 18px; overflow: hidden; margin-top: -28px; position: relative;
+    }
+    .franja div { background: var(--card); padding: 16px 16px 14px; }
+    .franja b {
+      display: block; font-family: Fraunces, Georgia, serif;
+      font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1; letter-spacing: -.03em;
+    }
+    .franja span { color: var(--muted); font-size: .92rem; }
+    .caps {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px;
+    }
+    .caps a {
+      display: flex; flex-direction: column; gap: 6px; min-height: 150px;
+      text-decoration: none; color: var(--ink); background: var(--card);
+      border: 1px solid var(--line); border-radius: 18px; padding: 16px;
+      border-top: 5px solid var(--sun);
+    }
+    .caps a:nth-child(2) { border-top-color: var(--blue); }
+    .caps a:nth-child(3) { border-top-color: var(--pink); }
+    .caps a:nth-child(4) { border-top-color: var(--green); }
+    .caps small { color: var(--muted); letter-spacing: .08em; }
+    .caps strong { font-family: Fraunces, Georgia, serif; font-size: 1.45rem; letter-spacing: -.03em; line-height: 1; }
+    .caps em { font-style: normal; color: var(--muted); font-size: .95rem; }
+    .bloque { padding: 68px 0; content-visibility: auto; contain-intrinsic-size: auto 680px; }
+    .bloque h2 { margin: 0 0 14px; font-size: clamp(2.2rem, 5vw, 3.7rem); max-width: 16ch; }
+    .lead { font-size: 1.15rem; max-width: 44rem; }
+    .lado { display: grid; grid-template-columns: 1.35fr .75fr; gap: 28px; align-items: start; }
+    .foto { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 10px; }
+    .foto img { border-radius: 10px; }
+    .foto figcaption { color: var(--muted); font-size: .82rem; padding: 8px 4px 2px; }
+    .carta {
+      background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+      padding: 22px 22px 8px; max-width: 46rem;
+    }
+    .carta p { margin-top: 0; }
+    .firma { font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 1.3rem; }
+    blockquote {
+      margin: 22px 0; padding: 4px 0 4px 16px; border-left: 4px solid var(--sun);
+      font-family: Fraunces, Georgia, serif; font-size: 1.35rem; line-height: 1.3;
+    }
+    blockquote cite { display: block; margin-top: 8px; font-family: Outfit, sans-serif; font-style: normal; font-size: .95rem; color: var(--muted); }
+    h3 { font-size: clamp(1.45rem, 3vw, 1.9rem); margin: 36px 0 10px; }
+    .cifras { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 18px 0; }
+    .cifra { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
+    .cifra b { display: block; font-family: Fraunces, Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: .95; letter-spacing: -.03em; }
+    .cifra span { color: var(--muted); font-size: .92rem; }
+    .via b { color: #8a6400; }
+    .mar b { color: var(--blue); }
+    .vida b { color: var(--pink); }
+    .campo b { color: var(--green); }
+    .anos { display: grid; grid-template-columns: repeat(4, 1fr); list-style: none; margin: 8px 0 0; padding: 22px 0 0; position: relative; }
+    .anos::before { content: ""; position: absolute; left: 0; right: 8%; top: 32px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, #d9c89a, var(--sun)); }
+    .anos li { position: relative; }
+    .anos b { display: block; color: var(--muted); font-size: .85rem; }
+    .anos strong { display: block; font-family: Fraunces, Georgia, serif; font-size: 1.8rem; }
+    .pill {
+      display: inline-block; margin-top: 12px; background: var(--night); color: var(--sun);
+      border-radius: 999px; padding: 6px 12px; font-weight: 640; font-size: .92rem;
+    }
+    .lista, .ruta, .gente { margin: 0; padding: 0; list-style: none; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+    .chips li { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; }
+    .ruta { border-left: 3px solid var(--sun); margin-top: 8px; }
+    .ruta li { padding: 0 0 16px 16px; position: relative; }
+    .ruta li::before {
+      content: ""; width: 11px; height: 11px; border-radius: 50%;
+      background: var(--sun); position: absolute; left: -7px; top: 6px;
+    }
+    .ruta strong { display: block; }
+    .ruta span { color: var(--muted); }
+    .parques { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .parques li { list-style: none; border-radius: 16px; padding: 18px 14px; color: #fff; min-height: 110px; display: flex; align-items: end; font-family: Fraunces, Georgia, serif; font-size: 1.25rem; line-height: 1.05; }
+    .parques li:nth-child(1) { background: #0e7a62; }
+    .parques li:nth-child(2) { background: #1554c8; }
+    .parques li:nth-child(3) { background: #1d7a34; }
+    .parques li:nth-child(4) { background: #8a4b12; }
+    .panel {
+      margin-top: 22px; border-radius: 22px; padding: 22px;
+      background:
+        radial-gradient(500px 220px at 100% 0%, rgba(80, 190, 255, .35), transparent 60%),
+        #07224f;
+      color: #f3f7ff;
+    }
+    .panel h3, .panel p { color: inherit; }
+    .panel .cifra { background: rgba(255,255,255,.08); border-color: transparent; }
+    .panel .cifra b { color: #9fd4ff; }
+    .panel .cifra span { color: #d5e4ff; }
+    .nota { margin: 14px 0 0; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.08); }
+    .qa { padding-top: 4px; }
+    .qa + .qa { border-top: 1px solid var(--line); }
+    .grupos { display: grid; grid-template-columns: 1.15fr .85fr; gap: 12px; }
+    .gente li { display: flex; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); }
+    .gente b {
+      flex: 0 0 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--night); color: #fff; font-size: .82rem;
+    }
+    .parroquias { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 14px; }
+    .parroquia { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 14px 6px; border-top: 5px solid var(--green); }
+    .parroquia h3 { margin: 0 0 6px; font-size: 1.25rem; }
+    .p-oro { border-top-color: #c89612; }
+    .p-rosa { border-top-color: var(--pink); }
+    .p-rojo { border-top-color: var(--red); }
+    .p-azul { border-top-color: var(--blue); }
+    .galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 10px; margin-top: 16px; }
+    .galeria a { display: block; text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+    .galeria figcaption { padding: 8px 8px 10px; font-size: .78rem; line-height: 1.3; }
+    .pie { background: var(--night); color: #f4ecdc; padding: 36px 0 28px; }
+    .pie p { margin: 0; max-width: 40rem; }
+    .pie small { display: block; margin-top: 14px; color: #cbbfa6; }
+    a:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+    @media (max-width: 860px) {
+      .caps, .parques, .grupos, .lado { grid-template-columns: 1fr; }
+      .franja { grid-template-columns: repeat(2, 1fr); margin-top: 18px; }
+      .foto { max-width: 420px; }
+    }
+    @media (max-width: 560px) {
+      .anos { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .anos::before { display: none; }
+      .bloque { padding: 48px 0; }
+      .hero { padding-top: 28px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="barra">
+    <div class="fila">
+      <a class="marca" href="#inicio">Plan <span>3.0</span></a>
+      <nav aria-label="Secciones del plan">
+        <ul class="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#somos">Somos</a></li>
+          <li><a href="#conectividad">Calles</a></li>
+          <li><a href="#turismo">Turismo</a></li>
+          <li><a href="#bienestar">Bienestar</a></li>
+          <li><a href="#campo">Campo</a></li>
+          <li><a href="#nabor">Nabor</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#paginas">Páginas</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="bandera" aria-hidden="true"></div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="wrap">
+        <p class="ojo">Chone · Manabí · Ecuador</p>
+        <h1>Plan de la Gente <em>3.0</em></h1>
+        <p class="baja">En Chone, superamos el abandono para luego resurgir y transformarnos. Ahora, soñamos con llevar a Chone a otro nivel.</p>
+        <p class="sello">A otro nivel</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="franja" aria-label="Cifras del plan">
+        <div><b>30 km</b><span>más de calles hacia 2027</span></div>
+        <div><b>5</b><span>puentes viales nuevos</span></div>
+        <div><b>8 km</b><span>de corredor junto al río</span></div>
+        <div><b>6.527</b><span>árboles nuevos en la ciudad</span></div>
+        <div><b>500 km</b><span>de vías rurales</span></div>
+        <div><b>44.700</b><span>personas con agua y saneamiento</span></div>
+      </div>
+
+      <nav class="caps" aria-label="Índice del plan">
+        <a href="#conectividad"><small>04</small><strong>Conectividad</strong><em>Calles, árboles, puentes y más de 150 sectores.</em></a>
+        <a href="#turismo"><small>08</small><strong>Eco turístico</strong><em>Río, Aquabus, La Segua y el acuario.</em></a>
+        <a href="#bienestar"><small>14</small><strong>Bienestar</strong><em>Cuidado, deporte, tecnología y mascotas.</em></a>
+        <a href="#campo"><small>20</small><strong>Desarrollo rural</strong><em>Mercados, vías, agua, alertas y canchas.</em></a>
+      </nav>
+    </div>
+
+    <section class="bloque" id="somos">
+      <div class="wrap lado">
+        <div>
+          <p class="ojo">02 · El impulso de la transformación</p>
+          <h2>Así somos en esta tierra</h2>
+          <p class="lead">Nos gusta mirar hacia el futuro y salir adelante.</p>
+          <div class="carta">
+            <p>Hola.</p>
+            <p>Hoy me siento mejor, más cuidada y más viva.</p>
+            <p>Hace unos años me sentía enferma, pero mis hijos e hijas hicieron suya la promesa de verme resurgir. Juntos empezamos a transformarnos, porque en esta tierra sabemos mirar el futuro y salir adelante.</p>
+            <p>Hoy, donde antes había tierra, hay pavimento. Y detrás de cada obra hay rostros e historias: doña Laura ya no ensucia sus zapatos al ir a misa; los Loor disfrutan sus caminatas en el parque; los Intriago van por su tercera cosecha de cacao mejorado, y Gemma sigue creciendo acompañada por las tías de Pancitas.</p>
+            <p>Estas historias también son mías. Porque cuando a mis hijas les va bien, a mí me va bien. Quiero seguir creciendo, abriendo oportunidades y cuidando lo que construimos juntos.</p>
+            <p>Porque el progreso se debe vivir en cada hogar de Chone.</p>
+            <p>Y estoy segura de que juntos seguiremos haciéndolo posible.</p>
+            <p class="firma">Con cariño, Chone</p>
+          </div>
+        </div>
+        <figure class="foto">
+          <img src="img/asi-somos.jpg" width="576" height="1024" alt="Página del plan: Así somos en esta tierra" loading="lazy" decoding="async">
+          <figcaption>Página de apertura del plan.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="bloque" id="conectividad">
+      <div class="wrap">
+        <p class="ojo">Plan Conectividad</p>
+        <h2>Caminos que nos acercan</h2>
+        <p class="lead">No son simples calles. Son dignidad y caminos que nos conectan con centros educativos, nuestros hogares, sueños y mejores oportunidades económicas.</p>
+        <div class="cifras via">
+          <article class="cifra"><b>30 km</b><span>más de calles</span></article>
+          <article class="cifra"><b>20K</b><span>en la zona urbana</span></article>
+          <article class="cifra"><b>10K</b><span>en la zona rural</span></article>
+        </div>
+        <p>La transformación vial sigue hacia más sectores. La meta del plan es llegar a 2027 con las calles asfaltadas.</p>
+        <ol class="anos">
+          <li><b>2018</b><strong>4K</strong></li>
+          <li><b>2023</b><strong>20K</strong></li>
+          <li><b>2026</b><strong>26K</strong></li>
+          <li><b>2027</b><strong>30K</strong></li>
+        </ol>
+        <p class="pill">100% calles asfaltadas</p>
+        <blockquote>
+          «Soñamos con ver nuestra calle asfaltada y caminar de la mano por este mismo sitio, recordando cuando nos conocimos y paseábamos por el barrio, pero esta vez en una calle más bonita, sin enlodarnos».
+        </blockquote>
+
+        <h3>Chone Verde</h3>
+        <p>Donde la modernidad y la naturaleza conviven. En 2027 la red vial urbana arbolada suma 150 km, con 13 m² de área verde por habitante.</p>
+        <div class="cifras via">
+          <article class="cifra"><b>6.527</b><span>nuevos árboles en la ciudad</span></article>
+          <article class="cifra"><b>150 km</b><span>de red vial urbana arbolada</span></article>
+          <article class="cifra"><b>13 m²</b><span>de área verde por habitante</span></article>
+        </div>
+        <ul class="chips">
+          <li>Más sombra</li>
+          <li>Menos radiación solar</li>
+          <li>Impulso al comercio y a la movilidad urbana</li>
+          <li>Belleza paisajística</li>
+        </ul>
+
+        <h3>Uniendo familias, uniendo historias</h3>
+        <p>Cinco puentes nuevos fortalecen la movilidad y la seguridad vial: llegar al trabajo, llevar a los hijos a la escuela, acudir al hospital o regresar a casa en menos tiempo y con mayor seguridad.</p>
+        <ol class="ruta">
+          <li><strong>Puente Los Naranjos</strong><span>Naranjos 1</span></li>
+          <li><strong>Puente Camino Real</strong><span>Egdy María · Camino Real</span></li>
+          <li><strong>Puente El Olimpo</strong><span>Av. Eloy Alfaro</span></li>
+          <li><strong>Puente San Felipe</strong><span>Malecón Puerto Arturo</span></li>
+          <li><strong>Puente San Rafael</strong><span>Av. Sixto Durán Ballén · Av. Marcos Aray Dueñas · Calle Boyacá · Sector Nuevo Mercado</span></li>
+        </ol>
+
+        <h3>Más de 150 sectores conectados</h3>
+        <blockquote>El sueño de una ciudad es el sueño de todos.</blockquote>
+        <figure class="foto">
+          <img src="img/puentes.jpg" width="576" height="1024" alt="Página de los cinco puentes viales" loading="lazy" decoding="async">
+          <figcaption>Los cinco puentes del Plan Conectividad.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="bloque" id="turismo">
+      <div class="wrap">
+        <p class="ojo">Plan económico y turístico</p>
+        <h2>Un río para volver a encontrarnos</h2>
+        <p class="lead">Tres proyectos para convertir a Chone en potencia turística. Chone vuelve a darle vida al río en una amplia zona recuperada, abierta al turismo, los emprendimientos y el trabajo.</p>
+        <div class="cifras mar">
+          <article class="cifra"><b>8 km</b><span>de corredor natural</span></article>
+          <article class="cifra"><b>4</b><span>espacios públicos conectados</span></article>
+          <article class="cifra"><b>15</b><span>paradas del Aquabus</span></article>
+        </div>
+        <blockquote>
+          «Mis mejores recuerdos están en el río, aquí me bañaba con mis hermanos y conocí al amor de mi vida, mi esposo. Imaginar este lugar recuperado me llena el corazón de ilusión».
+          <cite>Verónica</cite>
+        </blockquote>
+        <h3>Cuatro espacios, un mismo territorio</h3>
+        <p>Será la franja verde más grande del país.</p>
+        <ul class="parques">
+          <li>El Bejuco</li>
+          <li>Dos Bocas</li>
+          <li>Las Iguanas</li>
+          <li>La Esperanza</li>
+        </ul>
+
+        <h3>Aquabus</h3>
+        <p>Un sistema de transporte fluvial para una ciudad más conectada, sostenible y cercana al río. Quince paradas en ambos márgenes. Unirá a Chone a través del agua.</p>
+        <p class="pill">1 dato top</p>
+        <p>El Aquabus será un transporte limpio que impulsará la movilidad y el turismo sostenible en Chone, conectando y fortaleciendo la economía local.</p>
+        <ul class="chips">
+          <li>Turismo y recreación: caminar, visitar, disfrutar en familia</li>
+          <li>Economía local y empleo: emprendimientos, servicios y comercio</li>
+        </ul>
+
+        <h3>La Segua, naturaleza que genera oportunidades</h3>
+        <p>Un motor de desarrollo económico rural. Un parador de calidad, conectado con la Costa Norte de Manabí, para que visitantes, estudiantes e inversionistas conozcan el humedal, la gastronomía y los emprendimientos, y eso se vuelva trabajo e ingresos.</p>
+        <div class="cifras mar">
+          <article class="cifra"><b>+2.8 millones</b><span>de vehículos se conectarán con La Segua</span></article>
+        </div>
+        <ul class="chips">
+          <li>Emprendimientos y artesanías</li>
+          <li>Gastronomía local</li>
+          <li>Avistamiento de aves</li>
+          <li>Senderos y miradores</li>
+          <li>Paseos en kayak</li>
+          <li>Interpretación ambiental</li>
+          <li>Contemplación del humedal</li>
+        </ul>
+        <h3>Artesanías de Chone</h3>
+        <p>Los emprendimientos locales dinamizan la economía de La Segua.</p>
+        <h3>Experiencia La Segua</h3>
+        <p>Una experiencia rodeada de atardeceres, miles de aves, gastronomía y un paseo por el humedal. Embarcaciones espaciosas y coloridas para recorrerlo. Chone, Manabí.</p>
+
+        <div class="panel">
+          <p class="ojo">Será el primero en Ecuador</p>
+          <h3>¿Te imaginas un acuario en Chone?</h3>
+          <p>Descubrir nuestro mundo también es aprender. Aquí se vive el plan a otro nivel: la vida bajo el agua, en un museo interactivo. El acuario busca fortalecer la economía de Chone, atraer inversiones y empujar el desarrollo turístico.</p>
+          <div class="cifras">
+            <article class="cifra"><b>+300 mil</b><span>visitantes al año</span></article>
+            <article class="cifra"><b>+10 millones</b><span>en movimiento económico</span></article>
+            <article class="cifra"><b>1.500</b><span>empleos directos</span></article>
+            <article class="cifra"><b>3.000</b><span>empleos indirectos</span></article>
+          </div>
+          <p>Chone será la oferta turística más grande del Ecuador. Una ciudad para descubrir, disfrutar y volver.</p>
+          <p class="nota">El plan deja la pregunta abierta: ¿qué nombre le pondrías al Acuario de Chone?</p>
+        </div>
+        <figure class="foto" style="margin-top:18px">
+          <img src="img/segua.jpg" width="576" height="1024" alt="Página de La Segua" loading="lazy" decoding="async">
+          <figcaption>La Segua, en el plan eco turístico.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="bloque" id="bienestar">
+      <div class="wrap">
+        <p class="ojo">Plan bienestar, desarrollo e innovación</p>
+        <h2>Cuidar también es acompañar</h2>
+        <p class="lead">Más que infraestructura, este será un espacio de atención integral para las familias de Chone durante todas las etapas de la vida, con prioridad en quienes más lo necesitan. El plan se presenta junto al Hospital General Dr. Napoleón Dávila Córdova.</p>
+        <div class="cifras vida">
+          <article class="cifra"><b>+2.500</b><span>niñas y niños</span></article>
+          <article class="cifra"><b>+3.000</b><span>adultos mayores</span></article>
+          <article class="cifra"><b>+10.000</b><span>familias</span></article>
+          <article class="cifra"><b>+50.000</b><span>chonenses</span></article>
+        </div>
+        <ul class="chips">
+          <li>Pancitas contentas</li>
+          <li>Médico adentro</li>
+          <li>Centro de terapias</li>
+          <li>Chone incluyente</li>
+          <li>Teactivo</li>
+          <li>Centro de cuidado infantil</li>
+          <li>Mujeres que brillan</li>
+          <li>Psicología</li>
+        </ul>
+
+        <h3>La mesa que nos une</h3>
+        <p>En el Centro de Bienestar habrá un espacio de encuentro, cuidado y unidad, con alimentación nutritiva y de calidad para adultos mayores en situación de vulnerabilidad.</p>
+
+        <h3>Los sueños también se entrenan</h3>
+        <p>Chone será la sede del deporte olímpico. El deporte se plantea como una generación más sana, disciplinada y con más posibilidades: formar deportistas olímpicos y recibir a quienes vienen a competir desde el Ecuador.</p>
+        <div class="cifras vida">
+          <article class="cifra"><b>+20.000</b><span>deportistas al año en Chone</span></article>
+          <article class="cifra"><b>20</b><span>competencias nacionales y provinciales</span></article>
+        </div>
+
+        <h3>Aprender para crear</h3>
+        <p>El laboratorio de inteligencia artificial, robótica y tecnología en la Casa de la Juventud será un espacio de aprendizaje, innovación y creatividad para las nuevas generaciones.</p>
+        <ul class="chips">
+          <li>Formación en tecnología, programación e inteligencia artificial</li>
+          <li>Espacios de innovación: laboratorios y aulas</li>
+          <li>Oportunidades de empleo, emprendimiento e innovación</li>
+          <li>Tecnología al servicio del desarrollo del cantón</li>
+        </ul>
+
+        <h3>CliniPets</h3>
+        <p>Salud para las mascotas en el barrio. Una unidad veterinaria móvil de atención, prevención y bienestar animal para todos los sectores de Chone.</p>
+        <ul class="chips">
+          <li>Atención veterinaria</li>
+          <li>En tu comunidad</li>
+          <li>Bienestar animal</li>
+          <li>Para todas las familias</li>
+        </ul>
+        <figure class="foto" style="margin-top:18px">
+          <img src="img/bienestar.jpg" width="576" height="1024" alt="Página del Plan Bienestar" loading="lazy" decoding="async">
+          <figcaption>Plan Bienestar y sus programas.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="bloque" id="campo">
+      <div class="wrap">
+        <p class="ojo">Plan de desarrollo rural</p>
+        <h2>Del campo a nuevos mercados</h2>
+        <p class="lead">El Centro de Agronegocios será el polo donde la producción de Chone se encuentra con compradores, conocimiento y oportunidades. La idea es conectar el cantón con mercados más amplios y dar valor agregado a la materia prima.</p>
+        <p>En esa plataforma se juntan banca, universidades, biotecnología, industrialización y productores.</p>
+        <div class="cifras campo">
+          <article class="cifra"><b>20</b><span>ferias al año, de las 7 cadenas</span></article>
+          <article class="cifra"><b>$25 millones</b><span>en movimiento económico anual</span></article>
+          <article class="cifra"><b>7</b><span>cadenas productivas</span></article>
+        </div>
+        <ul class="chips">
+          <li>Plátano</li>
+          <li>Láctea</li>
+          <li>Cacao y chocolate</li>
+          <li>Bovina</li>
+          <li>Yuca y tubérculos</li>
+          <li>Maíz y alimentos balanceados</li>
+          <li>Frutas tropicales</li>
+        </ul>
+
+        <h3>Vías para progresar</h3>
+        <p>500 km de vías rurales para que la producción llegue mejor a los mercados, las familias se movilicen con mayor seguridad y las comunidades tengan más oportunidades.</p>
+        <div class="cifras campo">
+          <article class="cifra"><b>500 km</b><span>de vías rurales</span></article>
+        </div>
+
+        <h3>El agua es dignidad</h3>
+        <p>Más salud, más bienestar y más desarrollo en las comunidades rurales, con agua potable y alcantarillado.</p>
+        <div class="cifras campo">
+          <article class="cifra"><b>44.700</b><span>beneficiarios</span></article>
+          <article class="cifra"><b>170</b><span>comunidades tendrán agua</span></article>
+        </div>
+        <ul class="chips">
+          <li>Sistemas de agua potable: captación, tratamiento y distribución</li>
+          <li>Sistemas de alcantarillado para un entorno más seguro y saludable</li>
+          <li>Redes de distribución: ampliación y mejora de cobertura</li>
+          <li>Adquisición de hidrotaladro para llevar el agua a las comunidades</li>
+          <li>Acompañamiento comunitario para sostener los sistemas</li>
+        </ul>
+
+        <h3>Saber antes, para responder a tiempo</h3>
+        <p>Un sistema de alerta temprana para anticipar, prevenir y actuar ante una emergencia, y cuidar a las familias chonenses. Las estaciones meteorológicas monitorean el clima y ayudan a adelantarse a los riesgos.</p>
+        <ul class="chips">
+          <li>Estaciones meteorológicas</li>
+          <li>Sensores de ríos en tiempo real</li>
+          <li>Conexión al centro de monitoreo</li>
+          <li>Protocolo de alerta por una app</li>
+          <li>Cámaras de video en los ríos</li>
+        </ul>
+        <div class="cifras campo">
+          <article class="cifra"><b>+98</b><span>cámaras en puntos estratégicos del cantón</span></article>
+          <article class="cifra"><b>+115</b><span>puntos monitoreados</span></article>
+        </div>
+
+        <h3>Llegar a tiempo</h3>
+        <p>Atención rápida con cuatro unidades preparadas para emergencias en la ciudad y en la ruralidad. El plan cuenta 73.537 beneficiarios rurales.</p>
+        <ul class="chips">
+          <li>1 moto prehospitalaria, para los primeros minutos</li>
+          <li>1 moto contraincendio, con agua, extintores y herramientas</li>
+          <li>2 ambulancias 4x4 para terrenos rurales</li>
+        </ul>
+
+        <h3>El deporte es salud e integración</h3>
+        <p>Canchas y cubiertas nuevas para impulsar la actividad física y el encuentro entre familias y amigos, y para alejar a los jóvenes de los vicios. También hay espacios de recreación para los más pequeños de la casa.</p>
+        <div class="cifras campo">
+          <article class="cifra"><b>50</b><span>canchas múltiples</span></article>
+          <article class="cifra"><b>30</b><span>cubiertas para canchas existentes</span></article>
+        </div>
+        <figure class="foto" style="margin-top:18px">
+          <img src="img/agua.jpg" width="576" height="1024" alt="Página El agua es dignidad" loading="lazy" decoding="async">
+          <figcaption>Agua y saneamiento para las comunidades rurales.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="bloque" id="nabor">
+      <div class="wrap lado">
+        <div>
+          <p class="ojo">28 · Lo que hemos aprendido a hacer juntos</p>
+          <h2>Nabor Álvarez</h2>
+          <p class="lead">Criado por su abuela, ingeniero de profesión y padre de familia. En el plan conversa sobre su infancia, el trabajo en equipo, la gestión pública y lo que ve cuando recorre Chone.</p>
+
+          <article class="qa">
+            <h3>¿Quién es Nabor Álvarez?</h3>
+            <p>Soy un padre de familia, muy orgulloso de mis hijos. Soy chonero, quiero mucho a mi tierra y a nuestras costumbres. Me crió mi abuela y eso marcó profundamente mi vida. Me gusta compartir con mi familia, cocinar, nadar cuando puedo. Creo que antes de hablar de lo que uno hace, hay que recordar de dónde uno viene.</p>
+          </article>
+          <article class="qa">
+            <h3>¿Qué aprendiste de tu abuela?</h3>
+            <p>Sobre todo, a hacerme responsable de las cosas. Desde muy pequeño tuve que asumir situaciones que quizás otros niños no tenían que enfrentar todavía. Eso me hizo madurar temprano. Con el tiempo entendí que uno no siempre puede escoger las dificultades que le toca vivir, pero sí cómo enfrentarlas.</p>
+          </article>
+          <article class="qa">
+            <h3>Después de Ingeniería Hidráulica y gestión de proyectos, ¿qué te dejó el trabajo?</h3>
+            <p>La universidad enseña a calcular, planificar y encontrar soluciones. Al empezar a trabajar, las cosas se vuelven más complejas. Una cosa es diseñar un proyecto y otra conseguir los recursos, resolver los problemas y lograr que las obras se hagan bien y a tiempo. Eso no siempre se aprende en las aulas.</p>
+          </article>
+          <article class="qa">
+            <h3>¿Qué significó el equipo de Leonardo Rodríguez?</h3>
+            <p>Recuerdo especialmente las gestiones fuera de Chone, cuando nos tocaba buscar apoyo de otras autoridades. Al principio había puertas que no se abrían. Teníamos proyectos, ideas y ganas, pero conseguir que nos escucharan no era sencillo. Con don Leonardo y el equipo aprendimos a tener paciencia, a insistir y a prepararnos mejor. No bastaba con tener buenas ideas: había que demostrar que podíamos llevarlas a la realidad. Poco a poco las cosas cambiaron. Se abrieron puertas que parecían cerradas y encontramos obras que ni siquiera habíamos imaginado.</p>
+          </article>
+          <article class="qa">
+            <h3>Cuando recorres Chone, ¿qué ves?</h3>
+            <p>Veo una ciudad que se va moviendo. Barrios enteros donde antes había lodo y ahora hay calles pavimentadas. Y eso no es solamente una obra: significa poder salir de casa cuando llueve, llevar a los niños a la escuela o llegar al trabajo sin tantas dificultades. También me pasa caminar por la calle Bolívar con mi familia y encontrar locales nuevos, gente que se anima a emprender. O cuando voy por la ruralidad y veo cómo van creciendo nuestras parroquias.</p>
+            <p>Están la Ciudad del Conocimiento, el nuevo mercado, el shopping. Unos son resultado de la inversión pública y otros de la empresa privada. Juntos van cambiando la manera en que vivimos y nos encontramos. Cuando existe inversión pública y se crean mejores condiciones, los negocios y las empresas también se mueven. Detrás hay familias que trabajan, personas que invierten y mucho esfuerzo. Y sin duda siempre habrá familias que necesitan más apoyo y sectores donde faltan cosas por hacer. El progreso no sucede de la noche a la mañana. Es un camino que necesita constancia. Lo importante es no frenar y seguir mejorando.</p>
+          </article>
+          <article class="qa">
+            <h3>¿Qué te gustaría hacer mejor?</h3>
+            <p>Dedicar más tiempo a las personas que quiero. A veces uno está tan concentrado en resolver problemas que se olvida de disfrutar lo que tiene cerca.</p>
+          </article>
+          <article class="qa">
+            <h3>¿Qué ha sido lo más importante?</h3>
+            <p>Lo construido junto a la gente, con el liderazgo de Leonardo Rodríguez, va más allá de haber cumplido un trabajo. Hoy hay una experiencia compartida: una manera de escuchar, planificar, trabajar en equipo y buscar soluciones. También hay dificultades, cosas que funcionan y otras que hay que mejorar.</p>
+            <p>Hay que seguir con las obras, y además lograr que lo construido se convierta en oportunidades: que los negocios puedan crecer, que los jóvenes encuentren posibilidades para su futuro y que las familias vivan cada vez mejor.</p>
+          </article>
+          <blockquote>El gran legado de la transformación no solo es lo que hemos hecho, sino lo que hemos aprendido a hacer juntos.</blockquote>
+        </div>
+        <figure class="foto">
+          <img src="img/nabor.jpg" width="576" height="1024" alt="Página de Nabor Álvarez con su familia" loading="lazy" decoding="async">
+          <figcaption>Nabor Álvarez, en el plan.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="bloque" id="equipo">
+      <div class="wrap">
+        <p class="ojo">30 · El equipo de la evolución</p>
+        <h2>La gente que lleva el plan</h2>
+        <p class="lead">El documento cierra con las personas del Plan de la Gente 3.0, el equipo de la evolución y los equipos de parroquia.</p>
+        <div class="grupos">
+          <article class="parroquia p-azul">
+            <h3>Plan de la Gente 3.0</h3>
+            <ol class="gente">
+              <li><b>1</b> Oscar Zambrano</li>
+              <li><b>2</b> Elizabeth Molina</li>
+              <li><b>3</b> Junior Zambrano</li>
+              <li><b>4</b> Alisson Zambrano</li>
+              <li><b>5</b> Antonio Zambrano</li>
+            </ol>
+          </article>
+          <article class="parroquia p-oro">
+            <h3>El equipo de la evolución</h3>
+            <ol class="gente">
+              <li><b>1</b> Jessica Zambrano</li>
+              <li><b>2</b> Wagner Zambrano</li>
+              <li><b>3</b> Gina Zambrano</li>
+              <li><b>4</b> Ramón Moreira</li>
+            </ol>
+          </article>
+        </div>
+        <div class="parroquias">
+          <article class="parroquia">
+            <h3>Chibunga</h3>
+            <ol class="gente">
+              <li><b>1</b> Alberto Bravo</li>
+              <li><b>2</b> Marianela Niniguas</li>
+              <li><b>3</b> Carlos Salcedo</li>
+              <li><b>4</b> Yaritza García</li>
+              <li><b>5</b> Leonardo Cuadros</li>
+            </ol>
+          </article>
+          <article class="parroquia p-oro">
+            <h3>Convento</h3>
+            <ol class="gente">
+              <li><b>1</b> José Mendoza</li>
+              <li><b>2</b> Viviana Intriago</li>
+              <li><b>3</b> Néxar Romero</li>
+              <li><b>4</b> Amelia Cobeña</li>
+              <li><b>5</b> Elvis Zambrano</li>
+            </ol>
+          </article>
+          <article class="parroquia p-rosa">
+            <h3>Eloy Alfaro</h3>
+            <ol class="gente">
+              <li><b>1</b> Lisia Andrade</li>
+              <li><b>2</b> Lenny Loor</li>
+              <li><b>3</b> Verónica Vera</li>
+              <li><b>4</b> Agustín Hera</li>
+              <li><b>5</b> Enrique Herrera</li>
+            </ol>
+          </article>
+          <article class="parroquia p-oro">
+            <h3>Boyacá</h3>
+            <ol class="gente">
+              <li><b>1</b> Hernán García</li>
+              <li><b>2</b> María Santana</li>
+              <li><b>3</b> Oscar Loor</li>
+              <li><b>4</b> Suly Caicedo</li>
+              <li><b>5</b> Holmer Loor</li>
+            </ol>
+          </article>
+          <article class="parroquia p-rojo">
+            <h3>Ricaurte</h3>
+            <ol class="gente">
+              <li><b>1</b> Verónica Bravo</li>
+              <li><b>2</b> Byron Rodríguez</li>
+              <li><b>3</b> Johanna Caicedo</li>
+              <li><b>4</b> José Mendoza</li>
+              <li><b>5</b> Jennifer Cobeña</li>
+            </ol>
+          </article>
+          <article class="parroquia">
+            <h3>San Antonio</h3>
+            <ol class="gente">
+              <li><b>1</b> Melina Dueña</li>
+              <li><b>2</b> Roger Mendoza</li>
+              <li><b>3</b> Miney Santos</li>
+              <li><b>4</b> Sergio Mendoza</li>
+              <li><b>5</b> María Anzules</li>
+            </ol>
+          </article>
+          <article class="parroquia p-azul">
+            <h3>Canuto</h3>
+            <ol class="gente">
+              <li><b>1</b> Ángela Zambrano</li>
+              <li><b>2</b> Roberto Velásquez</li>
+              <li><b>3</b> Karen Basurto</li>
+              <li><b>4</b> Darwin Zambrano</li>
+              <li><b>5</b> Frella González</li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloque" id="paginas">
+      <div class="wrap">
+        <p class="ojo">El folleto completo</p>
+        <h2>Página por página</h2>
+        <p class="lead">Aquí está cada hoja del plan. Se cargan solo cuando llegas a ellas, para que la entrada siga siendo rápida.</p>
+        <div class="galeria">
+          <a href="img/portada.jpg"><figure><img src="img/portada.jpg" width="576" height="1024" alt="Portada Plan de la Gente 3.0" loading="lazy" decoding="async"><figcaption>Portada</figcaption></figure></a>
+          <a href="img/indice.jpg"><figure><img src="img/indice.jpg" width="576" height="1024" alt="Índice del plan" loading="lazy" decoding="async"><figcaption>Índice</figcaption></figure></a>
+          <a href="img/asi-somos.jpg"><figure><img src="img/asi-somos.jpg" width="576" height="1024" alt="Así somos" loading="lazy" decoding="async"><figcaption>Así somos</figcaption></figure></a>
+          <a href="img/caminos.jpg"><figure><img src="img/caminos.jpg" width="576" height="1024" alt="Caminos que nos acercan" loading="lazy" decoding="async"><figcaption>Caminos que nos acercan</figcaption></figure></a>
+          <a href="img/verde.jpg"><figure><img src="img/verde.jpg" width="576" height="1024" alt="Chone Verde" loading="lazy" decoding="async"><figcaption>Chone Verde</figcaption></figure></a>
+          <a href="img/puentes.jpg"><figure><img src="img/puentes.jpg" width="576" height="1024" alt="Cinco puentes" loading="lazy" decoding="async"><figcaption>Cinco puentes</figcaption></figure></a>
+          <a href="img/sectores.jpg"><figure><img src="img/sectores.jpg" width="576" height="1024" alt="Sectores conectados" loading="lazy" decoding="async"><figcaption>150 sectores</figcaption></figure></a>
+          <a href="img/rio.jpg"><figure><img src="img/rio.jpg" width="576" height="1024" alt="Un río para encontrarnos" loading="lazy" decoding="async"><figcaption>El río</figcaption></figure></a>
+          <a href="img/aquabus.jpg"><figure><img src="img/aquabus.jpg" width="576" height="1024" alt="Aquabus" loading="lazy" decoding="async"><figcaption>Aquabus</figcaption></figure></a>
+          <a href="img/segua.jpg"><figure><img src="img/segua.jpg" width="576" height="1024" alt="La Segua" loading="lazy" decoding="async"><figcaption>La Segua</figcaption></figure></a>
+          <a href="img/experiencia.jpg"><figure><img src="img/experiencia.jpg" width="576" height="1024" alt="Experiencia La Segua" loading="lazy" decoding="async"><figcaption>Experiencia La Segua</figcaption></figure></a>
+          <a href="img/acuario.jpg"><figure><img src="img/acuario.jpg" width="576" height="1024" alt="Acuario en Chone" loading="lazy" decoding="async"><figcaption>El acuario</figcaption></figure></a>
+          <a href="img/turismo.jpg"><figure><img src="img/turismo.jpg" width="576" height="1024" alt="Cifras de turismo" loading="lazy" decoding="async"><figcaption>Oferta turística</figcaption></figure></a>
+          <a href="img/bienestar.jpg"><figure><img src="img/bienestar.jpg" width="576" height="1024" alt="Plan Bienestar" loading="lazy" decoding="async"><figcaption>Plan Bienestar</figcaption></figure></a>
+          <a href="img/mesa.jpg"><figure><img src="img/mesa.jpg" width="576" height="1024" alt="La mesa que nos une" loading="lazy" decoding="async"><figcaption>La mesa que nos une</figcaption></figure></a>
+          <a href="img/olimpico.jpg"><figure><img src="img/olimpico.jpg" width="576" height="1024" alt="Deporte olímpico" loading="lazy" decoding="async"><figcaption>Deporte olímpico</figcaption></figure></a>
+          <a href="img/crear.jpg"><figure><img src="img/crear.jpg" width="576" height="1024" alt="Aprender para crear y CliniPets" loading="lazy" decoding="async"><figcaption>Aprender y CliniPets</figcaption></figure></a>
+          <a href="img/campo.jpg"><figure><img src="img/campo.jpg" width="576" height="1024" alt="Del campo a nuevos mercados" loading="lazy" decoding="async"><figcaption>Agronegocios</figcaption></figure></a>
+          <a href="img/cadenas.jpg"><figure><img src="img/cadenas.jpg" width="576" height="1024" alt="Cadenas productivas" loading="lazy" decoding="async"><figcaption>Cadenas productivas</figcaption></figure></a>
+          <a href="img/vias.jpg"><figure><img src="img/vias.jpg" width="576" height="1024" alt="500 kilómetros de vías rurales" loading="lazy" decoding="async"><figcaption>Vías rurales</figcaption></figure></a>
+          <a href="img/agua.jpg"><figure><img src="img/agua.jpg" width="576" height="1024" alt="El agua es dignidad" loading="lazy" decoding="async"><figcaption>El agua es dignidad</figcaption></figure></a>
+          <a href="img/alerta.jpg"><figure><img src="img/alerta.jpg" width="576" height="1024" alt="Sistema de alerta temprana" loading="lazy" decoding="async"><figcaption>Alerta temprana</figcaption></figure></a>
+          <a href="img/meteo.jpg"><figure><img src="img/meteo.jpg" width="576" height="1024" alt="Estación meteorológica y cámaras" loading="lazy" decoding="async"><figcaption>Monitoreo</figcaption></figure></a>
+          <a href="img/emergencia.jpg"><figure><img src="img/emergencia.jpg" width="576" height="1024" alt="Llegar a tiempo" loading="lazy" decoding="async"><figcaption>Llegar a tiempo</figcaption></figure></a>
+          <a href="img/deporte.jpg"><figure><img src="img/deporte.jpg" width="576" height="1024" alt="Canchas y deporte" loading="lazy" decoding="async"><figcaption>Canchas</figcaption></figure></a>
+          <a href="img/nabor.jpg"><figure><img src="img/nabor.jpg" width="576" height="1024" alt="Nabor Álvarez" loading="lazy" decoding="async"><figcaption>Nabor Álvarez</figcaption></figure></a>
+          <a href="img/nabor-2.jpg"><figure><img src="img/nabor-2.jpg" width="576" height="1024" alt="Entrevista de Nabor Álvarez" loading="lazy" decoding="async"><figcaption>La conversación</figcaption></figure></a>
+          <a href="img/equipo.jpg"><figure><img src="img/equipo.jpg" width="576" height="1024" alt="Equipo del Plan de la Gente 3.0" loading="lazy" decoding="async"><figcaption>Plan de la Gente</figcaption></figure></a>
+          <a href="img/evolucion.jpg"><figure><img src="img/evolucion.jpg" width="576" height="1024" alt="El equipo de la evolución" loading="lazy" decoding="async"><figcaption>La evolución</figcaption></figure></a>
+          <a href="img/parroquias.jpg"><figure><img src="img/parroquias.jpg" width="576" height="1024" alt="Equipos de Chibunga, Convento y Eloy Alfaro" loading="lazy" decoding="async"><figcaption>Chibunga, Convento, Eloy Alfaro</figcaption></figure></a>
+          <a href="img/parroquias-2.jpg"><figure><img src="img/parroquias-2.jpg" width="576" height="1024" alt="Equipos de Boyacá, Ricaurte, San Antonio y Canuto" loading="lazy" decoding="async"><figcaption>Boyacá, Ricaurte, San Antonio, Canuto</figcaption></figure></a>
+          <a href="img/cierre.jpg"><figure><img src="img/cierre.jpg" width="576" height="1024" alt="Contraportada A otro nivel" loading="lazy" decoding="async"><figcaption>A otro nivel</figcaption></figure></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="wrap">
+      <p class="sello">A otro nivel</p>
+      <p>Página informativa del Plan de la Gente 3.0. Chone, Manabí. El texto está en la página para que se lea al instante. Las fotos del folleto van aparte y solo se descargan si las miras.</p>
+      <small>Conectividad · Desarrollo eco turístico · Bienestar · Desarrollo rural</small>
+    </div>
+  </footer>
+</body>
+</html>
